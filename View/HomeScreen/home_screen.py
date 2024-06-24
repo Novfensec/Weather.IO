@@ -1,6 +1,6 @@
 from View.base_screen import BaseScreenView
 from kivymd.uix.card import MDCard
-from kivymd.uix.stacklayout import MDStackLayout
+from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.behaviors import CommonElevationBehavior
 from kivymd.uix.navigationdrawer import MDNavigationDrawer
 from kivy.properties import StringProperty
@@ -8,6 +8,9 @@ from kivy.clock import Clock
 from kivymd.uix.button import MDFillRoundFlatIconButton
 
 class BaseNavigationDrawer(MDNavigationDrawer):
+    current=StringProperty()
+
+class BaseNavigationLayout(MDBoxLayout):
     pass
 
 class WeatherCard(MDCard,CommonElevationBehavior):
@@ -38,8 +41,6 @@ class ExtendedButton(MDFillRoundFlatIconButton, CommonElevationBehavior):
     def set_radius(self, *args):
         if self.rounded_button:
             self._radius = self.radius = self.height / 4
-
-        
         
 class HomeScreenView(BaseScreenView):
     def model_is_changed(self) -> None:
