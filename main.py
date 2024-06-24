@@ -44,7 +44,7 @@ class nfsWeather(MDApp):
         self.theme_cls.accent_palette="Blue"
         self.theme_cls.accent_dark_hue="900"
         self.theme_cls.accent_light_hue="50"
-        self.DEBUG=False
+        self.DEBUG=True
 
     def build_app(self) -> MDScreenManager:
         """
