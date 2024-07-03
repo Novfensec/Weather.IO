@@ -1,1 +1,31 @@
-<WeatherProfilesScreenView>
+<WeatherProfilesScreenView>:
+    id:weather_profiles_screen
+    MDStackLayout:
+        size_hint: 1, 1
+        padding: ('4dp', '1dp', '4dp', '1dp')
+
+        MDBoxLayout:
+            size_hint_x:1
+            adaptive_height:True
+
+            MDIconButton:
+                icon: "arrow-left"
+                theme_icon_color:"Custom"
+                icon_color:app.theme_cls.primary_dark
+                icon_size:"29sp"
+                on_press:
+                    app.manager_screens.current="home screen"
+
+            MDLabel:
+                font_style:"H6"
+                text: "Search Different Cities"
+                color:app.theme_cls.primary_dark
+        
+        MDBoxLayout:
+            MDScrollView:
+                MDGridLayout:
+                    padding: ('5dp', '5dp', '5dp', '5dp')
+                    spacing:5
+                    size_hint_x:1
+                    size_hint_y:None
+                    cols:1

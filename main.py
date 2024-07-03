@@ -20,14 +20,14 @@ from PIL import ImageGrab
 resolution = ImageGrab.grab().size
 
 # Change the values of the application window size as you need.
-Config.set("graphics", "height", "725")
-Config.set("graphics", "width", "315")
+Config.set("graphics", "height", "711")
+Config.set("graphics", "width", "317")
 
 from kivy.core.window import Window
 
 # Place the application window on the right side of the computer screen.
-Window.top = 30
-Window.left = resolution[0] - Window.width
+Window.top = 28
+Window.left = resolution[0] - Window.width +3
 
 from kivymd.tools.hotreload.app import MDApp
 from kivymd.uix.screenmanager import MDScreenManager
@@ -39,10 +39,10 @@ class nfsWeather(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.theme_cls.primary_palette="Indigo"
-        self.theme_cls.primary_dark_hue="900"
+        self.theme_cls.primary_dark_hue="800"
         self.theme_cls.primary_light_hue="50"
-        self.theme_cls.accent_palette="Blue"
-        self.theme_cls.accent_dark_hue="900"
+        self.theme_cls.accent_palette="BlueGray"
+        self.theme_cls.accent_dark_hue="600"
         self.theme_cls.accent_light_hue="50"
         self.DEBUG=True
 
@@ -66,7 +66,7 @@ class nfsWeather(MDApp):
             view.manager_screens = self.manager_screens
             view.name = name_screen
             self.manager_screens.add_widget(view)
-
+            
         return self.manager_screens
 
     def on_keyboard_down(self, window, keyboard, keycode, text, modifiers) -> None:
@@ -80,8 +80,9 @@ class nfsWeather(MDApp):
         if "meta" in modifiers or "ctrl" in modifiers and text == "r":
             self.rebuild()
 
+if __name__ == '__main__':
+    nfsWeather().run()
 
-nfsWeather().run()
 
 # After you finish the project, remove the above code and uncomment the below
 # code to test the application normally without hot reloading.
@@ -104,8 +105,6 @@ nfsWeather().run()
 
 # from View.screens import screens
 
-# from kivy import Config
-
 # from PIL import ImageGrab
 
 # # TODO: You may know an easier way to get the size of a computer display.
@@ -125,7 +124,7 @@ nfsWeather().run()
 #         super().__init__(**kwargs)
 #         self.load_all_kv_files(self.directory)
 #         self.theme_cls.primary_palette="Indigo"
-#         self.theme_cls.primary_dark_hue="900"
+#         self.theme_cls.primary_dark_hue="800"
 #         self.theme_cls.primary_light_hue="50"
 #         self.theme_cls.accent_palette="Blue"
 #         self.theme_cls.accent_dark_hue="900"
@@ -158,4 +157,3 @@ nfsWeather().run()
 
 # if __name__ == '__main__':
 #     nfsWeather().run()
-    
