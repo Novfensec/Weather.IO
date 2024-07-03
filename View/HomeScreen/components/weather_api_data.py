@@ -7,7 +7,7 @@ def get_weather(city):
 	querystring = {"location":city,"format":"json","u":"f"}
 
 	headers = {
-		"x-rapidapi-key": "0fafe3de48mshce9c7b8d2fa9c1ap194196jsn2e9237f5a2c8",
+		"x-rapidapi-key": "your api passkey",
 		"x-rapidapi-host": "yahoo-weather5.p.rapidapi.com"
 		}
     
