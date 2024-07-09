@@ -11,9 +11,11 @@ DEBUG=1 python main.py
 
 import importlib
 import os
+from pathlib import Path
 
 from kivy import Config
-
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.button import MDFillRoundFlatIconButton
 from PIL import ImageGrab
 
 # TODO: You may know an easier way to get the size of a computer display.
@@ -31,6 +33,7 @@ Window.left = resolution[0] - Window.width +3
 
 from kivymd.tools.hotreload.app import MDApp
 from kivymd.uix.screenmanager import MDScreenManager
+from kivymd.uix.transition import MDFadeSlideTransition,MDSwapTransition
 
 
 class nfsWeather(MDApp):
@@ -38,13 +41,15 @@ class nfsWeather(MDApp):
     
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.DEBUG=True
         self.theme_cls.primary_palette="Indigo"
         self.theme_cls.primary_dark_hue="800"
         self.theme_cls.primary_light_hue="50"
-        self.theme_cls.accent_palette="BlueGray"
+        self.theme_cls.accent_palette="Indigo"
         self.theme_cls.accent_dark_hue="600"
-        self.theme_cls.accent_light_hue="50"
-        self.DEBUG=True
+        self.theme_cls.accent_light_hue="100"
+        self.basic_font="assets/fonts/PTSansNarrow-Regular.ttf"
+        self.basic_bold_font="assets/fonts/PTSansNarrow-Bold.ttf"
 
     def build_app(self) -> MDScreenManager:
         """
@@ -67,6 +72,8 @@ class nfsWeather(MDApp):
             view.name = name_screen
             self.manager_screens.add_widget(view)
             
+        self.manager_screens.padding="44dp"
+        self.manager_screens.current="home screen"
         return self.manager_screens
 
     def on_keyboard_down(self, window, keyboard, keycode, text, modifiers) -> None:
@@ -82,7 +89,6 @@ class nfsWeather(MDApp):
 
 if __name__ == '__main__':
     nfsWeather().run()
-
 
 # After you finish the project, remove the above code and uncomment the below
 # code to test the application normally without hot reloading.
