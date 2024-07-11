@@ -35,7 +35,6 @@ from kivymd.tools.hotreload.app import MDApp
 from kivymd.uix.screenmanager import MDScreenManager
 from kivymd.uix.transition import MDFadeSlideTransition,MDSwapTransition
 
-
 class nfsWeather(MDApp):
     KV_DIRS = [os.path.join(os.getcwd(), "View")]
     
