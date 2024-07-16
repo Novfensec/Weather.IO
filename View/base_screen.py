@@ -17,11 +17,10 @@ class CustomLabel(MDLabel):
         self.app=MDApp.get_running_app()
         self.bold=False
         self.font_size="21sp"
-        self.font_name=self.app.basic_font
-        # if self.bold==True:
-        #     self.font_name=self.app.basic_font
-        # else:
-        #     self.font_name=self.app.basic_bold_font
+        if self.bold==True:
+            self.font_name=self.app.basic_bold_font
+        else:
+            self.font_name=self.app.basic_font
 
 class BaseScreenView(ThemableBehavior, MDScreen, Observer):
     """
@@ -53,8 +52,8 @@ class BaseScreenView(ThemableBehavior, MDScreen, Observer):
     and defaults to `None`.
     """
 
-    def __init__(self, **kw):
-        super().__init__(**kw)
+    def __init__(self,*args, **kwargs):
+        super().__init__(*args, **kwargs)
         # Often you need to get access to the application object from the view
         # class. You can do this using this attribute.
         self.app = MDApp.get_running_app()

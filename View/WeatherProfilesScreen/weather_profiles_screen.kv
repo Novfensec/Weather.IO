@@ -20,7 +20,15 @@
                 font_style:"H6"
                 text: "Search Different Cities"
                 color:app.theme_cls.primary_dark
-        
+        MDSeparator:
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: ('9dp', '1dp', '9dp', '1dp')
+            adaptive_height:True
+            MDTextField:
+                hint_text:"Seach Cities"
+                size_hint:1,None
+
         MDBoxLayout:
             MDScrollView:
                 MDGridLayout:
@@ -29,3 +37,29 @@
                     size_hint_x:1
                     size_hint_y:None
                     cols:1
+
+                    WeatherCard:
+                        text: 'Loaction 1'
+
+<WeatherCard>:
+    padding: 4
+    size_hint: 1, None
+    md_bg_color:app.theme_cls.primary_light
+    size: "200dp", "100dp"
+    ripple_behavior:True
+    ripple_color:app.theme_cls.accent_light
+
+    MDRelativeLayout:
+
+        StyledIconButton:
+            icon: "dots-vertical"
+            pos_hint: {"top": 1, "right": 1}
+
+        CustomLabel:
+            id: weather_label
+            adaptive_size: True
+            font_style:"Body1"
+            color:app.theme_cls.primary_color
+            text: root.text
+            pos_hint:{"top":.7}
+            padding: ('7dp', '7dp', '7dp', '7dp')

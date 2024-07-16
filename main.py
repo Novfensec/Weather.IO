@@ -1,4 +1,3 @@
-
 """
 Script for managing hot reloading of the project.
 For more details see the documentation page -
@@ -73,8 +72,13 @@ class nfsWeather(MDApp):
             
         self.manager_screens.padding="44dp"
         self.manager_screens.current="home screen"
+        self.manager_screens.transition=MDSwapTransition()
+        self.apply_styles("Light")
         return self.manager_screens
 
+    def apply_styles(self,style="Light"):
+        self.theme_cls.theme_style=style
+        
     def on_keyboard_down(self, window, keyboard, keycode, text, modifiers) -> None:
         """
         The method handles keyboard events.

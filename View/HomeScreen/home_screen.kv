@@ -26,23 +26,25 @@
                                 MDGridLayout:
                                     rows:1
                                     adaptive_size:True
+
                                     StyledIconButton:
                                         icon: "plus"
+                                        on_press:
+                                            app.manager_screens.current="weather profiles screen"
 
                                     StyledIconButton:
                                         icon: "cog"
-
+                                        on_press:
+                                            app.manager_screens.current="settings screen"
+                    MDSeparator:
                     MDBoxLayout:
                         MDScrollView:
                             MDGridLayout:
-                                padding: ('5dp', '5dp', '5dp', '5dp')
+                                padding: ('5dp', '13dp', '5dp', '13dp')
                                 spacing:5
                                 size_hint_x:1
                                 size_hint_y:None
                                 cols:1
-
-                                WeatherCard:
-                                    text: "New York"
 
         BaseNavigationDrawer:
             id: nav_drawer
@@ -68,7 +70,7 @@
 <DrawerClickableItem@MDNavigationDrawerItem>:
     icon:"map-marker"
     focus_color: app.theme_cls.accent_light
-    unfocus_color: app.theme_cls.primary_light
+    unfocus_color: self.parent.md_bg_color
     selected_color:app.theme_cls.primary_dark
     text_color:"black"
     ripple_color:app.theme_cls.accent_light
@@ -107,13 +109,17 @@
         orientation: "vertical"
         adaptive_height: True
         spacing: "9dp"
-        padding: "3dp","8dp" , 0, "12dp"
+        padding: "3dp","11dp" , "0dp", "13dp"
 
-        ExtendedButton:
-            id:profile_btn
-            text: "Add Profile"
-            icon: "plus"
-            on_release:self.dropdownmenucallback(profile_btn)
+        Widget:
+        CustomLabel:
+            text: 'Saved Locations'
+            bold:True
+            height:self.texture_size[1]
+            font_size:"25sp"
+            color:app.theme_cls.primary_color
+
+        Widget:
 
     MDSeparator:
 
@@ -139,26 +145,3 @@
 <Item>:
     IconLeftWidget:
         icon: root.icon
-
-<WeatherCard>:
-    padding: 4
-    size_hint: 1, None
-    md_bg_color:app.theme_cls.primary_light
-    size: "200dp", "100dp"
-    ripple_behavior:True
-    ripple_color:app.theme_cls.accent_light
-
-    MDRelativeLayout:
-
-        StyledIconButton:
-            icon: "dots-vertical"
-            pos_hint: {"top": 1, "right": 1}
-
-        CustomLabel:
-            id: weather_label
-            adaptive_size: True
-            font_style:"Body1"
-            color:app.theme_cls.primary_color
-            text: root.text
-            pos_hint:{"top":.7}
-            padding: ('7dp', '7dp', '7dp', '7dp')
