@@ -17,8 +17,8 @@ class BaseNavigationDrawer(MDNavigationDrawer):
 class BaseNavigationLayout(MDBoxLayout):
     pass
 
-class WeatherCard(MDCard,CommonElevationBehavior):
-    text=StringProperty()
+class DisplayContentData(MDBoxLayout):
+    pass
 
 class ExtendedButton(MDFillRoundFlatIconButton, CommonElevationBehavior):
     '''

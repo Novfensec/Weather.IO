@@ -7,16 +7,12 @@
             size_hint_x:1
             adaptive_height:True
 
-            MDIconButton:
+            StyledIconButton:
                 icon: "arrow-left"
-                theme_icon_color:"Custom"
-                icon_color:app.theme_cls.primary_dark
-                icon_size:"29sp"
                 on_press:
                     app.manager_screens.current="home screen"
 
-            MDLabel:
-                font_style:"H5"
+            CustomLabel:
                 text: "Settings"
                 color:app.theme_cls.primary_dark
         MDSeparator:

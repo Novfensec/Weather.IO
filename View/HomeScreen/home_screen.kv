@@ -38,13 +38,23 @@
                                             app.manager_screens.current="settings screen"
                     MDSeparator:
                     MDBoxLayout:
+                        orientation: 'vertical'
+                        Widget:
+                            size_hint_y:None
+                            height:"9dp"
                         MDScrollView:
                             MDGridLayout:
+                                cols:1
                                 padding: ('5dp', '13dp', '5dp', '13dp')
                                 spacing:5
                                 size_hint_x:1
-                                size_hint_y:None
-                                cols:1
+                                adaptive_height:True
+
+                                DisplayContentData:
+
+                        Widget:
+                            size_hint_y:None
+                            height:"9dp"
 
         BaseNavigationDrawer:
             id: nav_drawer
@@ -138,10 +148,20 @@
     MDBoxLayout:
         adaptive_height:True
 
-        ExtendedButton:
+        MDFillRoundFlatIconButton:
             icon:"copyright"
             text:"Novfensec Inc."
+            md_bg_color: app.theme_cls.accent_light
+            text_color:app.theme_cls.primary_dark
+            icon_color:self.text_color
+            ripple_color:self.md_bg_color
 
 <Item>:
+    theme_text_color:"Custom"
+    text_color:app.theme_cls.primary_dark
+    ripple_color:app.theme_cls.accent_light
+    radius:[15]
     IconLeftWidget:
         icon: root.icon
+        theme_icon_color: "Custom"
+        icon_color:app.theme_cls.primary_dark

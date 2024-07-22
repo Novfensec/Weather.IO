@@ -21,7 +21,7 @@ from PIL import ImageGrab
 resolution = ImageGrab.grab().size
 
 # Change the values of the application window size as you need.
-Config.set("graphics", "height", "711")
+Config.set("graphics", "height", "685")
 Config.set("graphics", "width", "317")
 
 from kivy.core.window import Window
@@ -48,6 +48,7 @@ class nfsWeather(MDApp):
         self.theme_cls.accent_light_hue="100"
         self.basic_font="assets/fonts/PTSansNarrow-Regular.ttf"
         self.basic_bold_font="assets/fonts/PTSansNarrow-Bold.ttf"
+        self.apply_styles("Light")
 
     def build_app(self) -> MDScreenManager:
         """
@@ -73,7 +74,6 @@ class nfsWeather(MDApp):
         self.manager_screens.padding="44dp"
         self.manager_screens.current="home screen"
         self.manager_screens.transition=MDSwapTransition()
-        self.apply_styles("Light")
         return self.manager_screens
 
     def apply_styles(self,style="Light"):
@@ -134,7 +134,7 @@ if __name__ == '__main__':
 #         self.load_all_kv_files(self.directory)
 #         self.theme_cls.primary_palette="Indigo"
 #         self.theme_cls.primary_dark_hue="800"
-#         self.theme_cls.primary_light_hue="50"
+#         self.theme_cls.primary_light_hue="100"
 #         self.theme_cls.accent_palette="Blue"
 #         self.theme_cls.accent_dark_hue="900"
 #         self.theme_cls.accent_light_hue="50"

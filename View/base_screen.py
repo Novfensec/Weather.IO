@@ -17,10 +17,7 @@ class CustomLabel(MDLabel):
         self.app=MDApp.get_running_app()
         self.bold=False
         self.font_size="21sp"
-        if self.bold==True:
-            self.font_name=self.app.basic_bold_font
-        else:
-            self.font_name=self.app.basic_font
+        self.font_name=self.app.basic_font
 
 class BaseScreenView(ThemableBehavior, MDScreen, Observer):
     """

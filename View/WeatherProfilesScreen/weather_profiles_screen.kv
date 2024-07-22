@@ -8,16 +8,12 @@
             size_hint_x:1
             adaptive_height:True
 
-            MDIconButton:
+            StyledIconButton:
                 icon: "arrow-left"
-                theme_icon_color:"Custom"
-                icon_color:app.theme_cls.primary_dark
-                icon_size:"29sp"
                 on_press:
                     app.manager_screens.current="home screen"
 
-            MDLabel:
-                font_style:"H6"
+            CustomLabel:
                 text: "Search Different Cities"
                 color:app.theme_cls.primary_dark
         MDSeparator:
@@ -42,24 +38,49 @@
                         text: 'Loaction 1'
 
 <WeatherCard>:
-    padding: 4
-    size_hint: 1, None
-    md_bg_color:app.theme_cls.primary_light
-    size: "200dp", "100dp"
+    md_bg_color:0,.4,1,.05
+    orientation: 'vertical'
+    padding: ('7dp', '7dp', '7dp', '7dp')
+    spacing: '18dp'
+    adaptive_height:True
     ripple_behavior:True
-    ripple_color:app.theme_cls.accent_light
+    ripple_color:app.theme_cls.primary_light
 
-    MDRelativeLayout:
+    MDBoxLayout:
+        adaptive_height:True
+        size_hint_x:1
 
-        StyledIconButton:
-            icon: "dots-vertical"
-            pos_hint: {"top": 1, "right": 1}
+        MDAnchorLayout:
+            anchor_x:"left"
+            padding: ('9dp', '9dp', '9dp', '9dp')
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint_x:1
+                spacing: '19dp'
 
-        CustomLabel:
-            id: weather_label
-            adaptive_size: True
-            font_style:"Body1"
-            color:app.theme_cls.primary_color
-            text: root.text
-            pos_hint:{"top":.7}
-            padding: ('7dp', '7dp', '7dp', '7dp')
+                CustomLabel:
+                    id:city_name
+                    font_name: app.basic_bold_font
+                    height:self.texture_size[1]
+                    text:"Chicago"
+                    font_size:"27sp"
+
+                CustomLabel:
+                    id:city_temp
+                    text:f"25\xb0 C\nMostly Sunny"
+                    height:self.texture_size[1]
+                    font_size:"21sp"
+
+        MDAnchorLayout:
+            anchor_x:"right"
+            padding: ('9dp', '9dp', '9dp', '9dp')
+            MDBoxLayout:
+                orientation:'vertical'
+                adaptive_size:True
+                StyledIconButton:
+                    icon:'weather-sunny'
+                    icon_size:"85sp"
+                    icon_color:app.theme_cls.accent_dark
+                    _no_ripple_effect:True
+
+    Widget:
