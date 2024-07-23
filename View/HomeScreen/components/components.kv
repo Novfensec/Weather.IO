@@ -2,34 +2,30 @@
     md_bg_color:0,.4,1,.05
     orientation: 'vertical'
     padding: ('7dp', '7dp', '7dp', '7dp')
-    spacing: '18dp'
+    spacing: '4dp'
     adaptive_height:True
-    radius:[15]
+    radius:[19]
 
     MDBoxLayout:
         adaptive_height:True
-        size_hint_x:1
+		padding: ('9dp', '9dp', '9dp', '9dp')
+		MDBoxLayout:
+			orientation: 'vertical'
+			adaptive_height:True
+			spacing: '19dp'
 
-        MDAnchorLayout:
-            anchor_x:"left"
-            padding: ('9dp', '9dp', '9dp', '9dp')
-            MDBoxLayout:
-                orientation: 'vertical'
-                size_hint_x:1
-                spacing: '19dp'
+			CustomLabel:
+				id:city_name
+				font_name: app.basic_bold_font
+				adaptive_height:True
+				text:"Chicago"
+				font_size:"27sp"
 
-                CustomLabel:
-                    id:city_name
-                    font_name: app.basic_bold_font
-                    height:self.texture_size[1]
-                    text:"Chicago"
-                    font_size:"27sp"
-
-                CustomLabel:
-                    id:city_temp
-                    text:f"25\xb0 C\nMostly Sunny"
-                    height:self.texture_size[1]
-                    font_size:"21sp"
+			CustomLabel:
+				id:city_temp
+				text:f"25\xb0 C\nMostly Sunny"
+				adaptive_height:True
+                font_size:"21sp"
 
         MDAnchorLayout:
             anchor_x:"right"
@@ -48,9 +44,9 @@
 
     MDBoxLayout:
         orientation: 'vertical'
+		padding: ('9dp', '9dp', '9dp', '9dp')
         adaptive_height:True
-        padding: ('11dp', '1dp', '11dp', '11dp')
-        spacing: '10dp'
+        spacing: '9dp'
 
         CustomLabel:
             text:f"AQI: Good"
@@ -59,11 +55,11 @@
         MDSeparator:
         MDList:
             md_bg_color:app.theme_cls.primary_light
-            radius:[15]
+            radius:[19]
             spacing: '10dp'
             padding: ('4dp', '4dp', '4dp', '4dp')
             Item:
-                icon:"air-humidifier"
+                icon:"water-percent"
                 text:f"Humidity : 73"
             Item:
                 icon:"weather-windy"
@@ -75,12 +71,25 @@
                 icon:"eye"
                 text:f"Visibility : Unlimited"
             Item:
-                icon:"arrow-collapse-down"
+                icon:"arrow-collapse"
                 text:f"Pressure : 995.9 mb"
-
+	MDSeparator:
     MDBoxLayout:
         orientation: 'vertical'
         adaptive_height:True
 
         CustomLabel:
             text: 'Other Features are under development.'
+			
+	MDBoxLayout:
+		adaptive_height:True
+
+<Item>:
+    theme_text_color:"Custom"
+    text_color:app.theme_cls.primary_dark
+    ripple_color:app.theme_cls.primary_light
+    radius:[19]
+    IconLeftWidget:
+        icon: root.icon
+        theme_icon_color: "Custom"
+        icon_color:app.theme_cls.primary_dark
