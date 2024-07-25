@@ -1,7 +1,8 @@
 <SettingsScreenView>:
     MDStackLayout:
         size_hint: 1, 1
-        padding: ('4dp', '1dp', '4dp', '1dp')
+        padding: ('4dp', '4dp', '4dp', '1dp')
+        spacing: '7dp'
 
         MDBoxLayout:
             size_hint_x:1
@@ -19,16 +20,12 @@
         MDBoxLayout:
             orientation: 'vertical'
             adaptive_height:True
+            md_bg_color:0,0,0,.1
+            radius:[19]
 
-            StyledIconButton:
-                icon: "ab-testing"
-                on_press:app.apply_styles("Dark")
-                icon_color:app.theme_cls.accent_light
-
-            StyledIconButton:
-                icon: "login"
-                on_press:app.apply_styles("Light")
-                icon_color:app.theme_cls.accent_dark
+            CustomLabel:
+                text:"The Settings Screen Context is Under Development."
+                halign:'center'
 
         MDBoxLayout:
             MDScrollView:

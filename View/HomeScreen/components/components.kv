@@ -29,14 +29,13 @@
 
         MDAnchorLayout:
             anchor_x:"right"
-            padding: ('9dp', '9dp', '9dp', '9dp')
             MDBoxLayout:
                 orientation:'vertical'
                 adaptive_size:True
 
                 StyledIconButton:
                     icon:'weather-sunny'
-                    icon_size:"85sp"
+                    icon_size:"115sp"
                     icon_color:app.theme_cls.accent_dark
                     _no_ripple_effect:True
 
@@ -60,10 +59,10 @@
             padding: ('4dp', '4dp', '4dp', '4dp')
             Item:
                 icon:"water-percent"
-                text:f"Humidity : 73"
+                text:f"Humidity : 73 \x25"
             Item:
                 icon:"weather-windy"
-                text:f"Wind : 15kph"
+                text:f"Wind : 15 kph"
             Item:
                 icon:"weather-sunny"
                 text:f"UV Index : low"
@@ -80,7 +79,7 @@
 
         CustomLabel:
             text: 'Other Features are under development.'
-			
+
 	MDBoxLayout:
 		adaptive_height:True
 

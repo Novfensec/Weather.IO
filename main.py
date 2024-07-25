@@ -13,15 +13,13 @@ import os
 from pathlib import Path
 
 from kivy import Config
-from kivymd.uix.dialog import MDDialog
-from kivymd.uix.button import MDFillRoundFlatIconButton
 from PIL import ImageGrab
 
 # TODO: You may know an easier way to get the size of a computer display.
 resolution = ImageGrab.grab().size
 
 # Change the values of the application window size as you need.
-Config.set("graphics", "height", "685")
+Config.set("graphics", "height", "715")
 Config.set("graphics", "width", "317")
 
 from kivy.core.window import Window
@@ -32,7 +30,14 @@ Window.left = resolution[0] - Window.width +3
 
 from kivymd.tools.hotreload.app import MDApp
 from kivymd.uix.screenmanager import MDScreenManager
-from kivymd.uix.transition import MDFadeSlideTransition,MDSwapTransition
+from kivymd.uix.transition import MDSwapTransition
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.button import MDFillRoundFlatIconButton
+from kivymd.utils.set_bars_colors import set_bars_colors
+
+from kivy.clock import Clock
+
+Clock.max_iteration=30
 
 class nfsWeather(MDApp):
     KV_DIRS = [os.path.join(os.getcwd(), "View")]
@@ -111,6 +116,14 @@ if __name__ == '__main__':
 # 
 # from kivymd.app import MDApp
 # from kivymd.uix.screenmanager import MDScreenManager
+# from kivymd.uix.transition import MDSwapTransition
+# from kivymd.uix.dialog import MDDialog
+# from kivymd.uix.button import MDFillRoundFlatIconButton
+# from kivymd.utils.set_bars_colors import set_bars_colors
+
+# from kivy.clock import Clock
+
+# Clock.max_iteration=30
 
 # from View.screens import screens
 
@@ -134,16 +147,23 @@ if __name__ == '__main__':
 #         self.load_all_kv_files(self.directory)
 #         self.theme_cls.primary_palette="Indigo"
 #         self.theme_cls.primary_dark_hue="800"
-#         self.theme_cls.primary_light_hue="100"
-#         self.theme_cls.accent_palette="Blue"
-#         self.theme_cls.accent_dark_hue="900"
-#         self.theme_cls.accent_light_hue="50"
+#         self.theme_cls.primary_light_hue="50"
+#         self.theme_cls.accent_palette="Indigo"
+#         self.theme_cls.accent_dark_hue="600"
+#         self.theme_cls.accent_light_hue="100"
+#         self.basic_font="assets/fonts/PTSansNarrow-Regular.ttf"
+#         self.basic_bold_font="assets/fonts/PTSansNarrow-Bold.ttf"
+#         self.apply_styles("Light")
 #         # This is the screen manager that will contain all the screens of your
 #         # application.
 #         self.manager_screens = MDScreenManager()
         
 #     def build(self) -> MDScreenManager:
 #         self.generate_application_screens()
+#         self.set_bars_colors()
+#         self.manager_screens.padding="44dp"
+#         self.manager_screens.current="home screen"
+#         self.manager_screens.transition=MDSwapTransition()
 #         return self.manager_screens
 
 #     def generate_application_screens(self) -> None:
@@ -163,6 +183,16 @@ if __name__ == '__main__':
 #             view.manager_screens = self.manager_screens
 #             view.name = name_screen
 #             self.manager_screens.add_widget(view)
+
+#     def set_bars_colors(self):
+#         set_bars_colors(
+#             self.theme_cls.primary_color,  # status bar color
+#             self.theme_cls.primary_color,  # navigation bar color
+#             "Light",                       # icons color of status bar
+#         )
+
+#     def apply_styles(self,style="Light"):
+#         self.theme_cls.theme_style=style
 
 # if __name__ == '__main__':
 #     nfsWeather().run()
