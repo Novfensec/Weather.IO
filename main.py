@@ -56,11 +56,7 @@ class nfsWeather(MDApp):
         self.basic_font = "assets/fonts/PTSansNarrow-Regular.ttf"
         self.basic_bold_font = "assets/fonts/PTSansNarrow-Bold.ttf"
         self.apply_styles("Light")
-        with open("assets/json/data.json", "r", encoding="utf-8") as weather_data_file:
-            weather_data=weather_data_file.read()
-            weather_data=json.loads(weather_data)
-
-        self.weather_data = weather_data
+        self.update_context_data(["chicago"])
 
     def build_app(self) -> MDScreenManager:
         """
@@ -98,6 +94,12 @@ class nfsWeather(MDApp):
             with open("assets/json/data.json", "w", encoding="utf-8") as weather_data_file:
                 data=json.dumps(data)
                 weather_data_file.write(data)
+
+        with open("assets/json/data.json", "r", encoding="utf-8") as weather_data_file:
+            weather_data=weather_data_file.read()
+            weather_data=json.loads(weather_data)
+
+        self.weather_data = weather_data
                 
 
     def on_keyboard_down(self, window, keyboard, keycode, text, modifiers) -> None:

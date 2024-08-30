@@ -23,7 +23,7 @@
 
 			CustomLabel:
 				id:city_temp
-				text:f"{app.weather_data['current_observation']['condition']['temperature']}\xb0 F\nMostly Sunny"
+				text:f"{app.weather_data['current_observation']['condition']['temperature']}\xb0 F\n{app.weather_data['current_observation']['condition']['text']}"
 				adaptive_height:True
                 font_size:"21sp"
 

@@ -27,6 +27,11 @@
                                     MDGridLayout:
                                         rows:1
                                         adaptive_size:True
+                                        StyledIconButton:
+                                            icon: "reload"
+                                            ripple_color:app.theme_cls.primary_color
+                                            on_release:
+                                                app.update_context_data(['delhi'])
 
                                         StyledIconButton:
                                             icon: "plus"
