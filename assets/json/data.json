@@ -1,1 +1,122 @@
-null
+{
+    "location": {
+        "city": "Chicago",
+        "woeid": 2379574,
+        "country": "United States",
+        "lat": 41.884151,
+        "long": -87.632408,
+        "timezone_id": "America/Chicago"
+    },
+    "current_observation": {
+        "pubDate": 1725001439,
+        "wind": {
+            "chill": 80,
+            "direction": "SSE",
+            "speed": 8
+        },
+        "atmosphere": {
+            "humidity": 83,
+            "visibility": 10,
+            "pressure": 1016.6
+        },
+        "astronomy": {
+            "sunrise": "6:16 AM",
+            "sunset": "7:24 PM"
+        },
+        "condition": {
+            "temperature": 77,
+            "text": "Cloudy",
+            "code": 26
+        }
+    },
+    "forecasts": [
+        {
+            "day": "Fri",
+            "date": 1725033600,
+            "high": 87,
+            "low": 68,
+            "text": "Mostly Clear",
+            "code": 33
+        },
+        {
+            "day": "Sat",
+            "date": 1725120000,
+            "high": 81,
+            "low": 67,
+            "text": "Mostly Sunny",
+            "code": 34
+        },
+        {
+            "day": "Sun",
+            "date": 1725206400,
+            "high": 75,
+            "low": 61,
+            "text": "Mostly Sunny",
+            "code": 34
+        },
+        {
+            "day": "Mon",
+            "date": 1725292800,
+            "high": 71,
+            "low": 61,
+            "text": "Mostly Sunny",
+            "code": 34
+        },
+        {
+            "day": "Tue",
+            "date": 1725379200,
+            "high": 75,
+            "low": 62,
+            "text": "Partly Cloudy",
+            "code": 30
+        },
+        {
+            "day": "Wed",
+            "date": 1725465600,
+            "high": 76,
+            "low": 66,
+            "text": "Sunny",
+            "code": 32
+        },
+        {
+            "day": "Thu",
+            "date": 1725552000,
+            "high": 78,
+            "low": 69,
+            "text": "Sunny",
+            "code": 32
+        },
+        {
+            "day": "Fri",
+            "date": 1725638400,
+            "high": 77,
+            "low": 64,
+            "text": "Partly Cloudy",
+            "code": 30
+        },
+        {
+            "day": "Sat",
+            "date": 1725724800,
+            "high": 70,
+            "low": 60,
+            "text": "Partly Cloudy",
+            "code": 30
+        },
+        {
+            "day": "Sun",
+            "date": 1725811200,
+            "high": 71,
+            "low": 61,
+            "text": "Sunny",
+            "code": 32
+        },
+        {
+            "day": "Mon",
+            "date": 1725897600,
+            "high": 73,
+            "low": 64,
+            "text": "Sunny",
+            "code": 32
+        }
+    ]
+}

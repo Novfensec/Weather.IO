@@ -4,62 +4,66 @@
         MDScreenManager:
             id:base_screen_manager
             MDScreen:
-                MDStackLayout:
-                    size_hint: 1, 1
-                    padding: ('4dp', '4dp', '4dp', '1dp')
-
-                    MDBoxLayout:
-                        size_hint_x:1
-                        adaptive_height:True
-
-                        StyledIconButton:
-                            icon: "menu"
-                            on_press:nav_drawer.set_state("open")
-
-                        CustomLabel:
-                            text: "nfsWeather"
-                            color:app.theme_cls.primary_dark
+                MDRecycleView:
+                    MDStackLayout:
+                        size_hint: 1, 1
+                        padding: ('4dp', '4dp', '4dp', '1dp')
 
                         MDBoxLayout:
-                            AnchorLayout:
-                                anchor_x:"right"
-                                MDGridLayout:
-                                    rows:1
-                                    adaptive_size:True
+                            size_hint_x:1
+                            adaptive_height:True
 
-                                    StyledIconButton:
-                                        icon: "plus"
-                                        on_press:
-                                            app.manager_screens.current="weather profiles screen"
+                            StyledIconButton:
+                                icon: "menu"
+                                on_press:nav_drawer.set_state("open")
 
-                                    StyledIconButton:
-                                        icon: "cog"
-                                        on_press:
-                                            app.manager_screens.current="settings screen"
-                    MDSeparator:
-                    MDBoxLayout:
-                        orientation: 'vertical'
-                        Widget:
-                            size_hint_y:None
-                            height:"9dp"
-                        MDScrollView:
-							MDBoxLayout:
-								orientation:"vertical"
-								adaptive_height:True
-								padding:"7dp","7dp","7dp","7dp"
-								DisplayContentData:
+                            CustomLabel:
+                                text: "nfsWeather"
+                                color:app.theme_cls.primary_dark
 
-                        Widget:
-                            size_hint_y:None
-                            height:"9dp"
+                            MDBoxLayout:
+                                AnchorLayout:
+                                    anchor_x:"right"
+                                    MDGridLayout:
+                                        rows:1
+                                        adaptive_size:True
+
+                                        StyledIconButton:
+                                            icon: "plus"
+                                            on_press:
+                                                app.manager_screens.current="weather profiles screen"
+
+                                        StyledIconButton:
+                                            icon: "cog"
+                                            on_press:
+                                                app.manager_screens.current="settings screen"
+                        MDSeparator:
+                        MDBoxLayout:
+                            orientation: 'vertical'
+                            Widget:
+                                size_hint_y:None
+                                height:"9dp"
+                            MDScrollView:
+                                MDBoxLayout:
+                                    orientation:"vertical"
+                                    adaptive_height:True
+                                    padding:"7dp","7dp","7dp","7dp"
+                                    DisplayContentData:
+
+                            Widget:
+                                size_hint_y:None
+                                height:"9dp"
 
         BaseNavigationDrawer:
             id: nav_drawer
-            radius: (0, 16, 16, 0)
-            md_bg_color:1,1,1,.9
             width: "240dp"
+            padding:0
+            md_bg_color:1,1,1,0
             BaseNavigationLayout:
+                radius: (0, 16, 16, 0)
+                md_bg_color:1,1,1,.9
                 size_hint:1,1
+                padding: ('7dp', '7dp', '7dp', '7dp')
                 orientation:"vertical"
 
 #:import FadeTransition kivy.uix.screenmanager.FadeTransition

@@ -7,9 +7,6 @@ import View.HomeScreen.home_screen
 # If you no longer need a hot reload, you can delete this instruction.
 importlib.reload(View.HomeScreen.home_screen)
 
-
-
-
 class HomeScreenController:
     """
     The `HomeScreenController` class represents a controller implementation.

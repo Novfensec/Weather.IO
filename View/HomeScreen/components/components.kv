@@ -18,12 +18,12 @@
 				id:city_name
 				font_name: app.basic_bold_font
 				adaptive_height:True
-				text:"Chicago"
+				text:app.weather_data["location"]["city"]
 				font_size:"27sp"
 
 			CustomLabel:
 				id:city_temp
-				text:f"25\xb0 C\nMostly Sunny"
+				text:f"{app.weather_data['current_observation']['condition']['temperature']}\xb0 F\nMostly Sunny"
 				adaptive_height:True
                 font_size:"21sp"
 
@@ -59,19 +59,19 @@
             padding: ('4dp', '4dp', '4dp', '4dp')
             Item:
                 icon:"water-percent"
-                text:f"Humidity : 73 \x25"
+                text:f"Humidity : {app.weather_data['current_observation']['atmosphere']['humidity']} \x25"
             Item:
                 icon:"weather-windy"
-                text:f"Wind : 15 kph"
+                text:f"Wind : {app.weather_data['current_observation']['wind']['speed']} kph"
             Item:
                 icon:"weather-sunny"
-                text:f"UV Index : low"
+                text:f"UV Index : Sorry"
             Item:
                 icon:"eye"
-                text:f"Visibility : Unlimited"
+                text:f"Visibility : {app.weather_data['current_observation']['atmosphere']['visibility']}"
             Item:
                 icon:"arrow-collapse"
-                text:f"Pressure : 995.9 mb"
+                text:f"Pressure : {app.weather_data['current_observation']['atmosphere']['pressure']} mb"
 	MDSeparator:
     MDBoxLayout:
         orientation: 'vertical'

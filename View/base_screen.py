@@ -1,7 +1,9 @@
-from kivy.properties import ObjectProperty
 from kivymd.app import MDApp
+from kivy.properties import StringProperty, ObjectProperty
 from kivymd.theming import ThemableBehavior
 from kivymd.uix.screen import MDScreen
+from kivymd.uix.navigationdrawer import MDNavigationDrawer
+from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.label import MDLabel
 from kivymd.uix.button import MDIconButton
 
@@ -18,6 +20,12 @@ class CustomLabel(MDLabel):
         self.bold=False
         self.font_size="21sp"
         self.font_name=self.app.basic_font
+
+class BaseNavigationDrawer(MDNavigationDrawer):
+    current=StringProperty()
+
+class BaseNavigationLayout(MDBoxLayout):
+    pass
 
 class BaseScreenView(ThemableBehavior, MDScreen, Observer):
     """

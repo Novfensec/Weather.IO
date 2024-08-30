@@ -1,37 +1,38 @@
 <SettingsScreenView>:
-    MDStackLayout:
-        size_hint: 1, 1
-        padding: ('4dp', '4dp', '4dp', '1dp')
-        spacing: '7dp'
+    MDRecycleView:
+        MDStackLayout:
+            size_hint: 1, 1
+            padding: ('4dp', '4dp', '4dp', '1dp')
+            spacing: '7dp'
 
-        MDBoxLayout:
-            size_hint_x:1
-            adaptive_height:True
+            MDBoxLayout:
+                size_hint_x:1
+                adaptive_height:True
 
-            StyledIconButton:
-                icon: "arrow-left"
-                on_press:
-                    app.manager_screens.current="home screen"
+                StyledIconButton:
+                    icon: "arrow-left"
+                    on_press:
+                        app.manager_screens.current="home screen"
 
-            CustomLabel:
-                text: "Settings"
-                color:app.theme_cls.primary_dark
-        MDSeparator:
-        MDBoxLayout:
-            orientation: 'vertical'
-            adaptive_height:True
-            md_bg_color:0,0,0,.1
-            radius:[19]
+                CustomLabel:
+                    text: "Settings"
+                    color:app.theme_cls.primary_dark
+            MDSeparator:
+            MDBoxLayout:
+                orientation: 'vertical'
+                adaptive_height:True
+                md_bg_color:0,0,0,.1
+                radius:[19]
 
-            CustomLabel:
-                text:"The Settings Screen Context is Under Development."
-                halign:'center'
+                CustomLabel:
+                    text:"The Settings Screen Context is Under Development."
+                    halign:'center'
 
-        MDBoxLayout:
-            MDScrollView:
-                MDGridLayout:
-                    padding: ('5dp', '13dp', '5dp', '13dp')
-                    spacing:5
-                    size_hint_x:1
-                    size_hint_y:None
-                    cols:1
+            MDBoxLayout:
+                MDScrollView:
+                    MDGridLayout:
+                        padding: ('5dp', '13dp', '5dp', '13dp')
+                        spacing:5
+                        size_hint_x:1
+                        size_hint_y:None
+                        cols:1

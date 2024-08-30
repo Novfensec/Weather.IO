@@ -1,41 +1,42 @@
 <WeatherProfilesScreenView>:
     id:weather_profiles_screen
-    MDStackLayout:
-        size_hint: 1, 1
-        padding: ('4dp', '1dp', '4dp', '1dp')
+    MDRecycleView:
+        MDStackLayout:
+            size_hint: 1, 1
+            padding: ('4dp', '1dp', '4dp', '1dp')
 
-        MDBoxLayout:
-            size_hint_x:1
-            adaptive_height:True
+            MDBoxLayout:
+                size_hint_x:1
+                adaptive_height:True
 
-            StyledIconButton:
-                icon: "arrow-left"
-                on_press:
-                    app.manager_screens.current="home screen"
+                StyledIconButton:
+                    icon: "arrow-left"
+                    on_press:
+                        app.manager_screens.current="home screen"
 
-            CustomLabel:
-                text: "Search Different Cities"
-                color:app.theme_cls.primary_dark
-        MDSeparator:
-        MDBoxLayout:
-            orientation: 'vertical'
-            padding: ('9dp', '1dp', '9dp', '1dp')
-            adaptive_height:True
-            MDTextField:
-                hint_text:"Seach Cities"
-                size_hint:1,None
+                CustomLabel:
+                    text: "Search Different Cities"
+                    color:app.theme_cls.primary_dark
+            MDSeparator:
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: ('9dp', '1dp', '9dp', '1dp')
+                adaptive_height:True
+                MDTextField:
+                    hint_text:"Seach Cities"
+                    size_hint:1,None
 
-        MDBoxLayout:
-            MDScrollView:
-                MDGridLayout:
-                    padding: ('5dp', '5dp', '5dp', '5dp')
-                    spacing:5
-                    size_hint_x:1
-                    size_hint_y:None
-                    cols:1
+            MDBoxLayout:
+                orientation: 'vertical'
+                MDScrollView:
+                    WeatherCardGrid:
 
-                    WeatherCard:
-                        text: 'Loaction 1'
+<WeatherCardGrid>:
+    padding: ('5dp', '5dp', '5dp', '5dp')
+    cols:1
+    spacing:9
+    size_hint_x:1
+    adaptive_height:True
 
 <WeatherCard>:
     md_bg_color:0,.4,1,.05
@@ -57,7 +58,7 @@
 				id:city_name
 				font_name: app.basic_bold_font
 				adaptive_height:True
-				text:"Chicago"
+				text:root.text
 				font_size:"27sp"
 
 			CustomLabel:
@@ -75,6 +76,7 @@
                     icon:'weather-sunny'
                     icon_size:"115sp"
                     icon_color:app.theme_cls.accent_dark
-                    _no_ripple_effect:True
+                    on_press:
+                        app.update_preferences(city_name.text)
 
     Widget:

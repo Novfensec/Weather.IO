@@ -1,21 +1,12 @@
 from View.base_screen import BaseScreenView
-from kivymd.uix.card import MDCard
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.behaviors import CommonElevationBehavior
-from kivymd.uix.navigationdrawer import MDNavigationDrawer
 from kivy.properties import StringProperty
-from kivymd.uix.dialog import MDDialog
 from kivymd.uix.list import OneLineIconListItem
 from kivy.clock import Clock
 from kivymd.uix.button import MDFillRoundFlatIconButton
 from .components.weather_api_data import get_weather
 from kivymd.uix.menu import MDDropdownMenu
-
-class BaseNavigationDrawer(MDNavigationDrawer):
-    current=StringProperty()
-
-class BaseNavigationLayout(MDBoxLayout):
-    pass
 
 class DisplayContentData(MDBoxLayout):
     pass
