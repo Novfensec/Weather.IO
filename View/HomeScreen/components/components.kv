@@ -1,5 +1,5 @@
 <DisplayContentData>:
-    md_bg_color:0,.4,1,.05
+    md_bg_color:0,.4,1,.07
     orientation: 'vertical'
     padding: ('7dp', '7dp', '7dp', '7dp')
     spacing: '4dp'
@@ -18,12 +18,12 @@
 				id:city_name
 				font_name: app.basic_bold_font
 				adaptive_height:True
-				text:app.weather_data["location"]["city"]
+				text:app.weather_data["name"]
 				font_size:"27sp"
 
 			CustomLabel:
 				id:city_temp
-				text:f"{app.weather_data['current_observation']['condition']['temperature']}\xb0 F\n{app.weather_data['current_observation']['condition']['text']}"
+				text:f"{int(app.weather_data['main']['temp']-273.15)}\xb0 C\n{app.weather_data['weather'][0]['main']}"
 				adaptive_height:True
                 font_size:"21sp"
 
@@ -33,11 +33,10 @@
                 orientation:'vertical'
                 adaptive_size:True
 
-                StyledIconButton:
-                    icon:'weather-sunny'
-                    icon_size:"115sp"
-                    icon_color:app.theme_cls.accent_dark
-                    _no_ripple_effect:True
+                FitImage:
+                    source:f"https://openweathermap.org/img/wn/{app.weather_data['weather'][0]['icon']}@2x.png"
+                    size_hint: None, None
+                    size: '135dp','135dp'
 
     MDSeparator:
 
@@ -59,19 +58,19 @@
             padding: ('4dp', '4dp', '4dp', '4dp')
             Item:
                 icon:"water-percent"
-                text:f"Humidity : {app.weather_data['current_observation']['atmosphere']['humidity']} \x25"
+                text:f"Humidity : {app.weather_data['main']['humidity']} \x25"
             Item:
                 icon:"weather-windy"
-                text:f"Wind : {app.weather_data['current_observation']['wind']['speed']} kph"
+                text:f"Wind : {app.weather_data['wind']['speed']} kph"
             Item:
                 icon:"weather-sunny"
                 text:f"UV Index : Sorry"
             Item:
                 icon:"eye"
-                text:f"Visibility : {app.weather_data['current_observation']['atmosphere']['visibility']}"
+                text:f"Visibility : {app.weather_data['visibility']}"
             Item:
                 icon:"arrow-collapse"
-                text:f"Pressure : {app.weather_data['current_observation']['atmosphere']['pressure']} mb"
+                text:f"Pressure : {app.weather_data['main']['pressure']} mb"
 	MDSeparator:
     MDBoxLayout:
         orientation: 'vertical'

@@ -2,17 +2,11 @@ import requests
 
 def get_weather(city):
 
-	url = "https://yahoo-weather5.p.rapidapi.com/weather"
-
-	querystring = {"location":city,"format":"json","u":"f"}
-
-	headers = {
-		"x-rapidapi-key":"your-api-key",
-		"x-rapidapi-host":"yahoo-weather5.p.rapidapi.com"
-		}
+	api_key="your-api-key"
+	url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
 
 	try:
-		response =requests.get(url, headers=headers,params=querystring)
+		response =requests.get(url)
 		return response.json()
 	except Exception as e:
 		return False

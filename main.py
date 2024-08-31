@@ -43,10 +43,10 @@ Clock.max_iteration = 30
 
 class nfsWeather(MDApp):
     KV_DIRS = [os.path.join(os.getcwd(), "View")]
+    DEBUG=True
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.DEBUG = True
         self.theme_cls.primary_palette = "Indigo"
         self.theme_cls.primary_dark_hue = "800"
         self.theme_cls.primary_light_hue = "50"
