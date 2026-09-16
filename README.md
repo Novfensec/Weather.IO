@@ -4,6 +4,9 @@ Weather.IO is a sleek and modern weather application built using Kivy and KivyMD
 
 <!-- GitAds-Verify: FLNGJUL7ZRCUNVIOEZG1JSTEOLO4T9WD -->
 
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=novfensec/weather.io@github)](https://gitads.dev/v1/ad-track?source=novfensec/weather.io@github)
+
 ## Features
 
 - **Real-Time Weather Updates**: Get current weather information for any city, including temperature, humidity, wind speed, and more.
